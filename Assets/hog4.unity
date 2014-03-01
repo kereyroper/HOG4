@@ -214,6 +214,7 @@ GameObject:
   - 4: {fileID: 1422791499}
   - 212: {fileID: 1422791498}
   - 61: {fileID: 1422791497}
+  - 114: {fileID: 1422791500}
   m_Layer: 0
   m_Name: item
   m_TagString: Untagged
@@ -266,6 +267,18 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &1422791500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1422791496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46bc540c89ffb65419deec544ad9677b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: 0
 --- !u!1 &1715525191
 GameObject:
   m_ObjectHideFlags: 0
