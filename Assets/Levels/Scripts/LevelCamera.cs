@@ -3,13 +3,29 @@ using System.Collections;
 
 public class LevelCamera : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	public static void MoveCamera(Direction direction) {
+		var cam = Camera.main;
+		switch (direction) {
+			case Direction.Up:
+				cam.transform.position += new Vector3(0, 10.8f, 0);
+				break;
+			case Direction.Down:
+				cam.transform.position += new Vector3(0, -10.8f, 0);
+				break;
+			case Direction.Left:
+				cam.transform.position += new Vector3(-19.2f, 0, 0);
+				break;
+			default:
+				cam.transform.position += new Vector3(19.2f, 0, 0);
+				break;
+		}
 	}
 }
+
+public enum Direction
+{
+	Up,
+	Down,
+	Left,
+	Right
+};
