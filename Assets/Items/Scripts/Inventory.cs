@@ -5,8 +5,11 @@ using System.Collections;
 public class Inventory : MonoBehaviour
 {
 	public List<Item> items = new List<Item>();
+	public AudioSource PickUpSounds;
+
 
 	public void AddItem(Item item) {
+		PickUpSounds.Play();
 		items.Add(item);
 	}
 
