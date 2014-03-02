@@ -10,7 +10,11 @@ public class Item
 		                                                                                    {ItemType.Bread, true},
 																							{ItemType.Bagel, true},
 																							{ItemType.Waffle, true},
-																							{ItemType.Key, false},
+																							{ItemType.Key1, false},
+																							{ItemType.Key2, false},
+																							{ItemType.Key3, false},
+																							{ItemType.Key4, false},
+																							{ItemType.Key5, false},
 	                                                                                    };
 
 	public Item(ItemType itemType) {
@@ -28,5 +32,9 @@ public enum ItemType
 	Bread,
 	Bagel,
 	Waffle,
-	Key,
+	Key1,
+	Key2,
+	Key3,
+	Key4,
+	Key5,
 };
