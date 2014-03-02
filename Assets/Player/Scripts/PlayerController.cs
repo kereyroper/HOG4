@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
 		Vector3 movement = new Vector3(horizontalMovement, verticalMovement, 0);
 		transform.Translate(movement);
 
-		if (Input.GetKeyDown(KeyCode.Space) && GetComponent<Inventory>().items.Count != 0)
+		if (Input.GetKeyDown(KeyCode.Space) && GetComponent<Inventory>().projectiles.Count != 0)
 		{
 			GameObject projectile = Instantiate(Projectile, Vector3.zero, Quaternion.identity) as GameObject;
 			projectile.transform.position = transform.position;

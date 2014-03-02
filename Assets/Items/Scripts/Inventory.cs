@@ -4,19 +4,24 @@ using System.Collections;
 
 public class Inventory : MonoBehaviour
 {
-	public Queue<Item> items = new Queue<Item>();
-	//public List<Item> items = new List<Item>();
+	public Queue<Item> projectiles = new Queue<Item>();
+	public List<Item> otherItems = new List<Item>();
+
 	public AudioSource PickUpSounds;
 
 	public void AddItem(Item item)
 	{
-		items.Enqueue(item);
+		if (item.IsProjectile()) {
+			projectiles.Enqueue(item);
+		} else {
+			otherItems.Add(item);
+		}
 		PickUpSounds.Play();
 	}
 
 	public Item RemoveItem()
 	{
-		return items.Dequeue();
+		return projectiles.Dequeue();
 	}
 	//public bool RemoveItem(ItemType itemType)
 	//{
