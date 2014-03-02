@@ -208,7 +208,7 @@ GameObject:
   - 82: {fileID: 709310830}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -227,6 +227,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3.76999998
   toastLaunchSpeed: 7.32000017
+  HorizontalSprite: {fileID: 21300000, guid: 6d09e6fda9b3b0b4fbf5910cfc34d9f2, type: 3}
+  UpSprite: {fileID: 21300000, guid: a1385eeb8877675418f7bc4e231fe864, type: 3}
+  DownSprite: {fileID: 21300000, guid: d915a21e0328bfe4c8d53f70a0449264, type: 3}
   Toast: {fileID: 100000, guid: 93add3a07401d40458cee33a8f4f1073, type: 2}
   ToasterPop: {fileID: 709310830}
   Feet: {fileID: 709310829}

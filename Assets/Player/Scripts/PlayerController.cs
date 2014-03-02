@@ -10,19 +10,18 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
-	enum FACING
-	{
-		UP, RIGHT, DOWN, LEFT
-	};
-
 	public float speed = 0.5f;
 	public float toastLaunchSpeed = 2.1f;
+	public Sprite HorizontalSprite;
+	public Sprite UpSprite;
+	public Sprite DownSprite;
 	public GameObject Toast;
 
 	public AudioSource ToasterPop;
 	public AudioSource Feet;
 
-	private FACING facing = FACING.UP;
+	private bool facingRight = true;
+	private Vector2 firingDirection = Vector2.zero;
 	
 	void Start()
 	{
@@ -36,27 +35,41 @@ public class PlayerController : MonoBehaviour
 	
 	void Update()
 	{
+		if (Input.GetKeyDown(KeyCode.UpArrow))
+		{
+			GetComponent<SpriteRenderer>().sprite = UpSprite;
+			firingDirection.x = 0;
+			firingDirection.y = -1;
+		}
+		
+		if (Input.GetKeyDown(KeyCode.DownArrow))
+		{
+			GetComponent<SpriteRenderer>().sprite = DownSprite;
+			firingDirection.x = 0;
+			firingDirection.y = 1;
+		}
+		
+		if (Input.GetKeyDown(KeyCode.LeftArrow))
+		{
+			GetComponent<SpriteRenderer>().sprite = HorizontalSprite;
+			if (facingRight) flipSprite();
+			firingDirection.x = -1;
+			firingDirection.y = 0;
+		}
+		
+		if (Input.GetKeyDown(KeyCode.RightArrow))
+		{
+			GetComponent<SpriteRenderer>().sprite = HorizontalSprite;
+			if (!facingRight) flipSprite();
+			firingDirection.x = 1;
+			firingDirection.y = 0;
+		}
 	}
 	
 	void FixedUpdate ()
 	{
 		float horizontalMovement = speed * Input.GetAxis("Horizontal") * Time.deltaTime;
 		float verticalMovement = speed * Input.GetAxis("Vertical") * Time.deltaTime;
-
-		if (Mathf.Abs(horizontalMovement) > Mathf.Abs(verticalMovement))
-		{
-			if (horizontalMovement > 0)
-				facing = FACING.RIGHT;
-			else
-				facing = FACING.LEFT;
-		}
-		else
-		{
-			if (verticalMovement > 0)
-				facing = FACING.DOWN;
-			else
-				facing = FACING.UP;
-		}
 
 		if (horizontalMovement != 0 || verticalMovement != 0)
 		{
@@ -73,36 +86,17 @@ public class PlayerController : MonoBehaviour
 		{
 			GameObject toast = Instantiate(Toast, Vector3.zero, Quaternion.identity) as GameObject;
 			toast.transform.position = transform.position;
-
-			ToasterPop.Play();
-
-			Vector2 firingDirection = Vector2.zero;
-
-			switch(facing)
-			{
-			case FACING.UP:
-				firingDirection.x = 0;
-				firingDirection.y = -1;
-				break;
-			case FACING.RIGHT:
-				firingDirection.x = 1;
-				firingDirection.y = 0;
-				break;
-			case FACING.DOWN:
-				firingDirection.x = 0;
-				firingDirection.y = 1;
-				break;
-			case FACING.LEFT:
-				firingDirection.x = -1;
-				firingDirection.y = 0;
-				break;
-			default:
-				Debug.LogError("Invalid facing direction!");
-				break;
-			};
-
 			toast.rigidbody2D.velocity = firingDirection * toastLaunchSpeed;
-			Destroy(toast, 5); // destroy the toast in 5 seconds.
+			ToasterPop.Play();
+			Destroy(toast, 4); // destroy the toast in 5 seconds.
 		}
+	}
+
+	void flipSprite()
+	{
+		facingRight = !facingRight;
+		Vector3 myScale = transform.localScale;
+		myScale.x *= -1;
+		transform.localScale = myScale;
 	}
 }
