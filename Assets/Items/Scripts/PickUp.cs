@@ -8,7 +8,7 @@ public class PickUp : MonoBehaviour {
 		//TODO: link to player here
 	}
 	
-	void OnTriggerEnter(Collider other) { //TODO: maybe Collider2D?
+	void OnTriggerEnter2D(Collider2D other) {
 		// TODO: Check if player
 		// Add item to player inventory if not full for this item
 	}
