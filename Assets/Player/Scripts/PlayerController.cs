@@ -25,7 +25,8 @@ public class PlayerController : MonoBehaviour
 	
 	void Start()
 	{
-		
+		firingDirection.x = 1;
+		firingDirection.y = 0;
 	}
 	
 	void Awake()
