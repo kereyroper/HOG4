@@ -5,10 +5,10 @@ using System.Collections;
 public class TurtleController : MonoBehaviour {
 
 	public GameObject player;
-	public float turtleSpeed = 0.02f;
+	public float turtleSpeed;
 	public Sprite movingSprite;
 	public Sprite eatingSprite;
-	public float eatingTime = 2.3f;
+	public float eatingTime;
 	public AudioSource TurtleNoises;
 
 	bool eating = false;
@@ -21,6 +21,9 @@ public class TurtleController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
+
+	// TODO: when turtle hits a block, stays there forever. Need to check if targetDirection
+	// vector changes, and if turtle can now move towards player, should move again.
 	void Update (){
 		if (!eating)
 		{
@@ -35,9 +38,10 @@ public class TurtleController : MonoBehaviour {
 	{
 		// If the alien hits the trigger...
 		if (col.gameObject.tag == "Player") {
-			Destroy (gameObject);
-		} else if (col.gameObject.tag == "Environ") {
-			turtleSpeed = 0f;
+			Application.LoadLevel("game_over");
+		} 
+		else if (col.gameObject.tag == "Environ") { 
+			turtleSpeed = 0.0f;
 		}
 		else if (col.gameObject.tag == "Toast") {
 			GetComponent<SpriteRenderer>().sprite = eatingSprite;
