@@ -270,9 +270,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3.76999998
   toastLaunchSpeed: 7.32000017
-  HorizontalSprite: {fileID: 21300000, guid: 6d09e6fda9b3b0b4fbf5910cfc34d9f2, type: 3}
-  UpSprite: {fileID: 21300000, guid: a1385eeb8877675418f7bc4e231fe864, type: 3}
-  DownSprite: {fileID: 21300000, guid: d915a21e0328bfe4c8d53f70a0449264, type: 3}
+  HorizontalSprite: {fileID: 21300000, guid: 2bfcfd13279d973489dcaff08d689466, type: 3}
+  UpSprite: {fileID: 21300000, guid: cd3bcdb1234cd1d4a8909bc37762c4e6, type: 3}
+  DownSprite: {fileID: 21300000, guid: 8fd5eae0be29ce449a6ddeb5f4fd1f30, type: 3}
   Toast: {fileID: 100000, guid: 93add3a07401d40458cee33a8f4f1073, type: 2}
   ToasterPop: {fileID: 709310830}
   Feet: {fileID: 709310829}
@@ -298,7 +298,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: 6d09e6fda9b3b0b4fbf5910cfc34d9f2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2bfcfd13279d973489dcaff08d689466, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &709310828
 Transform:
@@ -439,7 +439,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 3.98000002, y: 2.44000006}
+  m_Size: {x: 1, y: 1}
   m_Center: {x: 0, y: 0}
 --- !u!50 &709310832
 Rigidbody2D:
@@ -673,7 +673,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: 859796c6c1663344c99b04e334d4a3b5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ce70d3c39236ada46b4d832771987b51, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1422791499
 Transform:
@@ -900,7 +900,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 0
   m_SortingLayerID: 1371519689
-  m_Sprite: {fileID: 21300000, guid: 675e40a8696fee24ea8528975d35ae7f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4cd8ce419c119c441bc55ee3facbf8f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1983108825
 Transform:
