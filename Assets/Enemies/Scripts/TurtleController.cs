@@ -9,7 +9,11 @@ public class TurtleController : MonoBehaviour {
 	public Sprite movingSprite;
 	public Sprite eatingSprite;
 	public float eatingTime = 2.3f;
+	public AudioSource TurtleNoises;
+
 	bool eating = false;
+
+
 
 	// Use this for initialization
 	void Start () {
@@ -45,6 +49,7 @@ public class TurtleController : MonoBehaviour {
 
 	IEnumerator EatBread(float delay)
 	{
+		TurtleNoises.Play ();
 		yield return new WaitForSeconds(delay);
 		GetComponent<SpriteRenderer>().sprite = movingSprite;
 		eating = false;

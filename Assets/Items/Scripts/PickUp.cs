@@ -12,7 +12,13 @@ public class PickUp : MonoBehaviour
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
+
+
+
 		if (other.gameObject.tag == "Player") {
+
+			System.Console.WriteLine("Object was picked up!");
+
 			other.GetComponent<Inventory>().AddItem(item);
 			Destroy(gameObject);
 		}
