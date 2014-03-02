@@ -8,7 +8,7 @@ public class LevelCamera : MonoBehaviour {
 
 		//HACK grab player to move across the door's threshold
 		GameObject player = GameObject.Find ("Player");
-		float doorThreshold = 1.75f;
+		float doorThreshold = 2.5f;
 
 		switch (direction) {
 			case Direction.Up:
