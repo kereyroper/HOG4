@@ -39,14 +39,14 @@ public class PlayerController : MonoBehaviour
 		{
 			GetComponent<SpriteRenderer>().sprite = UpSprite;
 			firingDirection.x = 0;
-			firingDirection.y = -1;
+			firingDirection.y = 1;
 		}
 		
 		if (Input.GetKeyDown(KeyCode.DownArrow))
 		{
 			GetComponent<SpriteRenderer>().sprite = DownSprite;
 			firingDirection.x = 0;
-			firingDirection.y = 1;
+			firingDirection.y = -1;
 		}
 		
 		if (Input.GetKeyDown(KeyCode.LeftArrow))
