@@ -1,15 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PickUp : MonoBehaviour {
+public class PickUp : MonoBehaviour
+{
+	public ItemType itemType;
 
-	// Use this for initialization
-	void Start () {
-		//TODO: link to player here
+	private Item item;
+
+	void Start() {
+		item = new Item(itemType);
 	}
-	
+
 	void OnTriggerEnter2D(Collider2D other) {
-		// TODO: Check if player
-		// Add item to player inventory if not full for this item
+		if (other.gameObject.tag == "Player") {
+			other.GetComponent<Inventory>().AddItem(item);
+			Destroy(gameObject);
+		}
 	}
 }

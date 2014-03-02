@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Item : MonoBehaviour
+public class Item
 {
 	public ItemType itemType;
+
+	public Item(ItemType itemType) {
+		this.itemType = itemType;
+	}
 }
 
 public enum ItemType
