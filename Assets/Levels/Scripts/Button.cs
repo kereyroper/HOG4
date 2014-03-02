@@ -21,7 +21,7 @@ public class Button : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		if (col.gameObject.tag == "Player" || col.gameObject.tag == "Turttle")
+		if (col.gameObject.tag == "Player" || col.gameObject.tag == "Turtle")
 		{
 			GetComponent<SpriteRenderer>().sprite = downSprite;
 		}
