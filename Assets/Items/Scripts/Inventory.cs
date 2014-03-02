@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System.Collections;
+using System.Linq;
+
 
 public class Inventory : MonoBehaviour
 {
@@ -22,6 +24,10 @@ public class Inventory : MonoBehaviour
 	public Item RemoveItem()
 	{
 		return projectiles.Dequeue();
+	}
+
+	public bool HasKey(ItemType keyRequired) {
+		return otherItems.Any(item => item.itemType == keyRequired);
 	}
 	//public bool RemoveItem(ItemType itemType)
 	//{
