@@ -19,6 +19,9 @@ public class PlayerController : MonoBehaviour
 	public float toastLaunchSpeed = 2.1f;
 	public GameObject Toast;
 
+	public AudioSource ToasterPop;
+	public AudioSource Feet;
+
 	private FACING facing = FACING.UP;
 	
 	void Start()
@@ -37,31 +40,41 @@ public class PlayerController : MonoBehaviour
 	
 	void FixedUpdate ()
 	{
-		float horinzontalMovement = speed * Input.GetAxis("Horizontal") * Time.deltaTime;
-		float verticallMovement = speed * Input.GetAxis("Vertical") * Time.deltaTime;
+		float horizontalMovement = speed * Input.GetAxis("Horizontal") * Time.deltaTime;
+		float verticalMovement = speed * Input.GetAxis("Vertical") * Time.deltaTime;
 
-		if (Mathf.Abs(horinzontalMovement) > Mathf.Abs(verticallMovement))
+		if (Mathf.Abs(horizontalMovement) > Mathf.Abs(verticalMovement))
 		{
-			if (horinzontalMovement > 0)
+			if (horizontalMovement > 0)
 				facing = FACING.RIGHT;
 			else
 				facing = FACING.LEFT;
 		}
 		else
 		{
-			if (verticallMovement > 0)
+			if (verticalMovement > 0)
 				facing = FACING.DOWN;
 			else
 				facing = FACING.UP;
 		}
 
-		Vector3 movement = new Vector3(horinzontalMovement, verticallMovement, 0);
+		if (horizontalMovement != 0 || verticalMovement != 0)
+		{
+			if (!Feet.isPlaying)
+				Feet.Play();
+		}
+		else
+			Feet.Stop();
+
+		Vector3 movement = new Vector3(horizontalMovement, verticalMovement, 0);
 		transform.Translate(movement);
 
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			GameObject toast = Instantiate(Toast, Vector3.zero, Quaternion.identity) as GameObject;
 			toast.transform.position = transform.position;
+
+			ToasterPop.Play();
 
 			Vector2 firingDirection = Vector2.zero;
 
