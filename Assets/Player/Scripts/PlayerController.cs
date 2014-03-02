@@ -85,11 +85,16 @@ public class PlayerController : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
-			GameObject toast = Instantiate(Toast, Vector3.zero, Quaternion.identity) as GameObject;
-			toast.transform.position = transform.position;
-			toast.rigidbody2D.velocity = firingDirection * toastLaunchSpeed;
-			ToasterPop.Play();
-			Destroy(toast, 4); // destroy the toast in 5 seconds.
+			bool hasBread = GetComponent<Inventory>().RemoveItem(ItemType.Bread);
+
+			if (hasBread)
+			{
+				GameObject toast = Instantiate(Toast, Vector3.zero, Quaternion.identity) as GameObject;
+				toast.transform.position = transform.position;
+				toast.rigidbody2D.velocity = firingDirection * toastLaunchSpeed;
+				ToasterPop.Play();
+				Destroy(toast, 4);
+			}
 		}
 	}
 
