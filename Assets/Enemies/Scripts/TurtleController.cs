@@ -13,11 +13,10 @@ public class TurtleController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		// Fix me. I need a direction vector using my position and the player direction
-		//transform.position += new Vector3 (turtleSpeed, -turtleSpeed, 0);
+	void Update (){
+		Vector3 targetDirection = player.transform.position - transform.position;
 		if (Vector3.Distance (transform.position, player.transform.position) >= 0.2) {
-			transform.position += transform.forward * turtleSpeed * Time.deltaTime;
+			transform.position += targetDirection * turtleSpeed * Time.deltaTime;
 		}
 	}
 
