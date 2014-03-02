@@ -27,8 +27,8 @@ public class RollCredits : MonoBehaviour
 				participant ("Corey Blackburn", "http://www.coreyblackburn.com/") +
 				participant ("Maria Mckinley", "http://mariakathryn.net/") +
 				participant ("Kerey Roper", "http://www.rivetinggames.com/") +
-				participant ("Evan Witt", "http://www.fiverbeyond.com/") +
-				section ("REACTOR & HouseOgames Present: HOGjam #4");
+				section ("REACTOR & HouseOgames") +
+				section("Present: HOGjam #4");
 		
 		isRolling = true;
 	}
@@ -43,8 +43,7 @@ public class RollCredits : MonoBehaviour
 		if (transform.position.y > end)
 		{
 			isRolling = false;
-			Debug.LogError("Need to edit the build settings.");
-			Application.LoadLevel ("doors and walls test");
+			Application.LoadLevel ("main_menu");
 		}
 	}
 	
