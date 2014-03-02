@@ -11,11 +11,11 @@ using System.Collections;
 public class PlayerController : MonoBehaviour
 {
 	public float speed = 0.5f;
-	public float toastLaunchSpeed = 2.1f;
+	public float projectileLaunchSpeed = 2.1f;
 	public Sprite HorizontalSprite;
 	public Sprite UpSprite;
 	public Sprite DownSprite;
-	public GameObject Toast;
+	public GameObject Projectile;
 
 	public AudioSource ToasterPop;
 	public AudioSource Feet;
@@ -83,18 +83,25 @@ public class PlayerController : MonoBehaviour
 		Vector3 movement = new Vector3(horizontalMovement, verticalMovement, 0);
 		transform.Translate(movement);
 
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetKeyDown(KeyCode.Space) && GetComponent<Inventory>().items.Count != 0)
 		{
-			bool hasBread = GetComponent<Inventory>().RemoveItem(ItemType.Bread);
+			GameObject projectile = Instantiate(Projectile, Vector3.zero, Quaternion.identity) as GameObject;
+			projectile.transform.position = transform.position;
+			projectile.rigidbody2D.velocity = firingDirection * projectileLaunchSpeed;
+			projectile.GetComponent<Projectile>().SetSprite(GetComponent<Inventory>().RemoveItem().itemType);
+			ToasterPop.Play();
+			Destroy(projectile, 4);
 
-			if (hasBread)
-			{
-				GameObject toast = Instantiate(Toast, Vector3.zero, Quaternion.identity) as GameObject;
-				toast.transform.position = transform.position;
-				toast.rigidbody2D.velocity = firingDirection * toastLaunchSpeed;
-				ToasterPop.Play();
-				Destroy(toast, 4);
-			}
+			//bool hasBread = GetComponent<Inventory>().RemoveItem(ItemType.Bread);
+
+			//if (hasBread)
+			//{
+			//	GameObject toast = Instantiate(Toast, Vector3.zero, Quaternion.identity) as GameObject;
+			//	toast.transform.position = transform.position;
+			//	toast.rigidbody2D.velocity = firingDirection * toastLaunchSpeed;
+			//	ToasterPop.Play();
+			//	Destroy(toast, 4);
+			//}
 		}
 	}
 

@@ -187,11 +187,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3.76999998
-  toastLaunchSpeed: 7.32000017
+  projectileLaunchSpeed: 2.0999999
   HorizontalSprite: {fileID: 21300000, guid: 2bfcfd13279d973489dcaff08d689466, type: 3}
   UpSprite: {fileID: 21300000, guid: cd3bcdb1234cd1d4a8909bc37762c4e6, type: 3}
   DownSprite: {fileID: 21300000, guid: 8fd5eae0be29ce449a6ddeb5f4fd1f30, type: 3}
-  Toast: {fileID: 100000, guid: 93add3a07401d40458cee33a8f4f1073, type: 2}
+  Projectile: {fileID: 100000, guid: 93add3a07401d40458cee33a8f4f1073, type: 2}
   ToasterPop: {fileID: 8200002}
   Feet: {fileID: 8200000}
 --- !u!114 &11400002

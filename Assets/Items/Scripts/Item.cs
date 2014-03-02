@@ -13,5 +13,7 @@ public class Item
 public enum ItemType
 {
 	Bread,
+	Bagel,
+	Waffle,
 	Key,
 };

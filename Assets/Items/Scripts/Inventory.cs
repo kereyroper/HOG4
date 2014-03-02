@@ -4,14 +4,18 @@ using System.Collections;
 
 public class Inventory : MonoBehaviour
 {
-	public List<Item> items = new List<Item>();
+	public Queue<Item> items = new Queue<Item>();
 
 	public void AddItem(Item item) {
-		items.Add(item);
+		items.Enqueue(item);
 	}
 
-	public bool RemoveItem(ItemType itemType)
+	public Item RemoveItem()
 	{
-		return items.Remove( items.FindLast(x => x.itemType == itemType) );
+		return items.Dequeue();
 	}
+	//public bool RemoveItem(ItemType itemType)
+	//{
+	//	return items.Remove( items.FindLast(x => x.itemType == itemType) );
+	//}
 }
