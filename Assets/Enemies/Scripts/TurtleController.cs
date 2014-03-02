@@ -6,6 +6,10 @@ public class TurtleController : MonoBehaviour {
 
 	public GameObject player;
 	public float turtleSpeed = 0.02f;
+	public Sprite movingSprite;
+	public Sprite eatingSprite;
+	public float eatingTime = 2.3f;
+	bool eating = false;
 
 	// Use this for initialization
 	void Start () {
@@ -14,9 +18,12 @@ public class TurtleController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update (){
-		Vector3 targetDirection = player.transform.position - transform.position;
-		if (Vector3.Distance (transform.position, player.transform.position) >= 0.2) {
-			transform.position += targetDirection * turtleSpeed * Time.deltaTime;
+		if (!eating)
+		{
+			Vector3 targetDirection = player.transform.position - transform.position;
+			if (Vector3.Distance (transform.position, player.transform.position) >= 0.2) {
+				transform.position += targetDirection * turtleSpeed * Time.deltaTime;
+			}
 		}
 	}
 
@@ -28,6 +35,19 @@ public class TurtleController : MonoBehaviour {
 		} else if (col.gameObject.tag == "Environ") {
 			turtleSpeed = 0f;
 		}
+		else if (col.gameObject.tag == "Toast") {
+			GetComponent<SpriteRenderer>().sprite = eatingSprite;
+			Destroy(col.gameObject);
+			eating = true;
+			StartCoroutine( EatBread(eatingTime) );
+		}
+	}
+
+	IEnumerator EatBread(float delay)
+	{
+		yield return new WaitForSeconds(delay);
+		GetComponent<SpriteRenderer>().sprite = movingSprite;
+		eating = false;
 	}
 
 }
