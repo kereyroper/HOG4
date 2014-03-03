@@ -36,11 +36,7 @@ public class TurtleController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		// If the alien hits the trigger...
-		if (col.gameObject.tag == "Player") {
-			Application.LoadLevel("game_over");
-		} 
-		else if (col.gameObject.tag == "Environ") { 
+		if (col.gameObject.tag == "Environ") { 
 			turtleSpeed = 0.0f;
 		}
 		else if (col.gameObject.tag == "Toast") {
@@ -49,6 +45,14 @@ public class TurtleController : MonoBehaviour {
 			eating = true;
 			StartCoroutine( EatBread(eatingTime) );
 		}
+	}
+
+	void OnCollisionEnter2D(Collision2D col)
+	{
+		if (col.gameObject.tag == "Player")
+		{
+			Application.LoadLevel("game_over");
+		} 
 	}
 
 	IEnumerator EatBread(float delay)

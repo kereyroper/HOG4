@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour {
 	
 		// Make the quit button.
 		if(GUI.Button(new Rect(50,130,80,20), "Quit")) {
-			Application.LoadLevel("game_over");
+			Application.Quit();
 		}
 
 		// Extra Dark
