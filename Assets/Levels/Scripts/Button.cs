@@ -9,6 +9,7 @@ public class Button : MonoBehaviour
 	public GameObject Trigger;
 
 	private bool isDown = false;
+	private int colliders = 0; //HACK
 
 	// Use this for initialization
 	void Start ()
@@ -26,19 +27,33 @@ public class Button : MonoBehaviour
 	{
 		if (col.gameObject.tag == "Player" || col.gameObject.tag == "Turtle")
 		{
+			//HACK
+			if (col.gameObject.tag == "Turtle")
+				colliders++;
+
 			isDown = true;
 			GetComponent<SpriteRenderer>().sprite = downSprite;
-			Trigger.GetComponent<Vault>().Signal();
+			Trigger.GetComponent<Vault>().SignalUnlock();
+			Debug.Log(colliders.ToString());
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D col)
 	{
-		if (col.gameObject.tag == "Player" || col.gameObject.tag == "Turtle" && isDown)
+		if (col.gameObject.tag == "Player" || col.gameObject.tag == "Turtle")
 		{
-			isDown = false;
-			GetComponent<SpriteRenderer>().sprite = upSprite;
-			Trigger.GetComponent<Vault>().Signal();
+			//HACK
+			if (col.gameObject.tag == "Turtle")
+				colliders--;
+
+			Debug.Log(colliders.ToString());
+
+			if (colliders == 0)
+			{
+				isDown = false;
+				GetComponent<SpriteRenderer>().sprite = upSprite;
+				Trigger.GetComponent<Vault>().SignalLock();
+			}
 		}
 	}
 }

@@ -19,20 +19,18 @@ public class Vault : MonoBehaviour
 	
 	}
 
-	public void Signal()
+	public void SignalLock()
 	{
-		locked = !locked;
+		locked = true;
+		GetComponent<SpriteRenderer>().sprite = LockedSprite;
+		GetComponent<Door>().isLocked = true;
+	}
 
-		if (locked == true)
-		{
-			GetComponent<SpriteRenderer>().sprite = LockedSprite;
-			GetComponent<Door>().isLocked = true;
-		}
-		else
-		{
-			GetComponent<SpriteRenderer>().sprite= UnlockedSprite;
-			GetComponent<Door>().isLocked = false;
-		}
+	public void SignalUnlock()
+	{
+		locked = false;
+		GetComponent<SpriteRenderer>().sprite = UnlockedSprite;
+		GetComponent<Door>().isLocked = false;
 	}
 
 }
