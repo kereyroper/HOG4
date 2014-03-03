@@ -410,6 +410,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 221644043}
   - 212: {fileID: 221644044}
+  - 61: {fileID: 221644045}
   m_Layer: 0
   m_Name: bed
   m_TagString: Untagged
@@ -451,6 +452,17 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_Sprite: {fileID: 21300000, guid: 588e0c582c9c848489f65f97df7d34f9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &221644045
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 221644042}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 5.53999996, y: 3.33999991}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &247761557
 GameObject:
   m_ObjectHideFlags: 0
@@ -2587,7 +2599,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &964481001
 Transform:
   m_ObjectHideFlags: 0
@@ -3645,6 +3657,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1399138064}
   - 212: {fileID: 1399138065}
+  - 61: {fileID: 1399138066}
   m_Layer: 0
   m_Name: deskempty
   m_TagString: Untagged
@@ -3686,6 +3699,17 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_Sprite: {fileID: 21300000, guid: 7e64964d4bfd4c349b9db474ba704f31, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &1399138066
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1399138063}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 4.38000011, y: 1.96000004}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1422791496
 GameObject:
   m_ObjectHideFlags: 0
@@ -4609,6 +4633,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2011393513}
   - 212: {fileID: 2011393514}
+  - 61: {fileID: 2011393515}
   m_Layer: 0
   m_Name: chair
   m_TagString: Untagged
@@ -4650,6 +4675,17 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_Sprite: {fileID: 21300000, guid: f5fe4728a9762d54b936955cdf76dfb3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &2011393515
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2011393512}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 3.19000006, y: 3.04999995}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &2024186848
 GameObject:
   m_ObjectHideFlags: 0
