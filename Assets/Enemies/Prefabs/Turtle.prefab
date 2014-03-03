@@ -157,7 +157,7 @@ MonoBehaviour:
   player: {fileID: 0}
   turtleSpeed: .119999997
   movingSprite: {fileID: 21300000, guid: 5836ff0063c1b2a4d82b0c9ff8b72c61, type: 3}
-  eatingSprite: {fileID: 21300000, guid: 506e494b6ff13014687d1b706dfa2306, type: 3}
+  eatingSprite: {fileID: 21300000, guid: fe2a39a6fc37559478bba517a7b68473, type: 3}
   eatingTime: 2.29999995
   TurtleNoises: {fileID: 8200000}
 --- !u!212 &21200000
