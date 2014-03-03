@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MainMenu : MonoBehaviour {
+public class MainMenu : MonoBehaviour
+{
+	public GameObject toast;
 
 	void OnGUI () {
 		// Make a background box
@@ -24,7 +26,7 @@ public class MainMenu : MonoBehaviour {
 
 		// Extra Dark
 		if(GUI.Button(new Rect(50,160,80,20), "Extra Dark")) {
-			Application.LoadLevel("burned_it");
+			toast.SetActive(true);
 		}
 	}
 }
