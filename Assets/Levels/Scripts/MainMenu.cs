@@ -3,7 +3,8 @@ using System.Collections;
 
 public class MainMenu : MonoBehaviour
 {
-	public GameObject toast;
+	public GameObject burntToast;
+	public GameObject goodToast;
 
 	void OnGUI () {
 		// Make a background box
@@ -11,7 +12,8 @@ public class MainMenu : MonoBehaviour
 		
 		// Make the first button. If it is pressed, Application.Loadlevel (1) will be executed
 		if(GUI.Button(new Rect(50,70,80,20), "Start Game")) {
-			Application.LoadLevel("toaster game");
+			goodToast.SetActive(true);
+			Invoke("StartGame", 3f);
 		}
 		
 		// Make the credits button.
@@ -26,7 +28,11 @@ public class MainMenu : MonoBehaviour
 
 		// Extra Dark
 		if(GUI.Button(new Rect(50,160,80,20), "Extra Dark")) {
-			toast.SetActive(true);
+			burntToast.SetActive(true);
 		}
+	}
+
+	void StartGame() {
+		Application.LoadLevel("toaster game");
 	}
 }
