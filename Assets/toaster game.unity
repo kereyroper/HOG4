@@ -1517,6 +1517,7 @@ Transform:
   m_Children:
   - {fileID: 1422791499}
   - {fileID: 1083150496}
+  - {fileID: 1399086754}
   - {fileID: 278805782}
   - {fileID: 1867019160}
   m_Father: {fileID: 0}
@@ -2344,7 +2345,7 @@ Transform:
   m_LocalPosition: {x: 8.89867401, y: 2.7080245, z: 0}
   m_LocalScale: {x: .400000006, y: .400000006, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 836135285}
 --- !u!1001 &1418591290
 Prefab:
   m_ObjectHideFlags: 0
