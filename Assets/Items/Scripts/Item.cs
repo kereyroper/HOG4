@@ -15,6 +15,8 @@ public class Item
 																							{ItemType.Key3, false},
 																							{ItemType.Key4, false},
 																							{ItemType.Key5, false},
+																							{ItemType.RobotParts1, false},
+																							{ItemType.RobotParts2, false},
 	                                                                                    };
 
 	public Item(ItemType itemType) {
@@ -37,4 +39,6 @@ public enum ItemType
 	Key3,
 	Key4,
 	Key5,
+	RobotParts1,
+	RobotParts2,
 };

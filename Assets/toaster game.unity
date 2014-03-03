@@ -2438,6 +2438,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1065918025}
   - 212: {fileID: 1065918026}
+  - 61: {fileID: 1065918027}
+  - 114: {fileID: 1065918028}
   m_Layer: 0
   m_Name: robotparts
   m_TagString: Untagged
@@ -2479,6 +2481,29 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_Sprite: {fileID: 21300000, guid: 4b8d01c4fe7c7914299b452b8d61ac21, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &1065918027
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1065918024}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 1.30999994, y: 3.5}
+  m_Center: {x: 0, y: -1}
+--- !u!114 &1065918028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1065918024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbe02f1ee82d7524f8118a59051be73a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: 8
 --- !u!1 &1071902314
 GameObject:
   m_ObjectHideFlags: 0
