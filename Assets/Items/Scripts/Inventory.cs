@@ -10,15 +10,18 @@ public class Inventory : MonoBehaviour
 	public List<Item> otherItems = new List<Item>();
 
 	public AudioSource PickUpSounds;
+	public AudioClip keyPickUp;
 
 	public void AddItem(Item item)
 	{
+		PickUpSounds.Play ();
+
 		if (item.IsProjectile()) {
 			projectiles.Enqueue(item);
 		} else {
 			otherItems.Add(item);
 		}
-		PickUpSounds.Play();
+
 	}
 
 	public Item RemoveItem()
