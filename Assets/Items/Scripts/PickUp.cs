@@ -17,7 +17,6 @@ public class PickUp : MonoBehaviour
 
 		if (other.gameObject.tag == "Player") {
 
-			System.Console.WriteLine("Object was picked up!");
 
 			other.GetComponent<Inventory>().AddItem(item);
 			Destroy(gameObject);
