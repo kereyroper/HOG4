@@ -274,9 +274,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 0
-  RoomToDisable: {fileID: 0}
+  RoomToDisable: {fileID: 836135284}
   DoorOpen: {fileID: 709310829}
-  RoomToEnable: {fileID: 0}
+  RoomToEnable: {fileID: 1810538281}
   isLocked: 0
   keyNumber: 0
 --- !u!61 &278805784
@@ -384,9 +384,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 2
-  RoomToDisable: {fileID: 0}
+  RoomToDisable: {fileID: 964481000}
   DoorOpen: {fileID: 709310829}
-  RoomToEnable: {fileID: 0}
+  RoomToEnable: {fileID: 1810538281}
   isLocked: 0
   keyNumber: 0
 --- !u!61 &318762517
@@ -441,11 +441,11 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 964481001}
+    m_TransformParent: {fileID: 1810538282}
     m_Modifications:
     - target: {fileID: 400000, guid: 23896cb7d5c72824da3a2d8204c6a016, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -9.89346123
+      value: 9.30653954
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 23896cb7d5c72824da3a2d8204c6a016, type: 2}
       propertyPath: m_LocalPosition.y
@@ -474,7 +474,7 @@ Prefab:
     - target: {fileID: 11400000, guid: 23896cb7d5c72824da3a2d8204c6a016, type: 2}
       propertyPath: RoomToDisable
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1810538281}
     - target: {fileID: 11400000, guid: 23896cb7d5c72824da3a2d8204c6a016, type: 2}
       propertyPath: DoorOpen
       value: 
@@ -482,7 +482,7 @@ Prefab:
     - target: {fileID: 11400000, guid: 23896cb7d5c72824da3a2d8204c6a016, type: 2}
       propertyPath: RoomToEnable
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 964481000}
     - target: {fileID: 11400000, guid: 23896cb7d5c72824da3a2d8204c6a016, type: 2}
       propertyPath: direction
       value: 3
@@ -517,10 +517,10 @@ Transform:
   m_PrefabInternal: {fileID: 362199171}
   m_GameObject: {fileID: 425768950}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: -4.37113883e-08}
-  m_LocalPosition: {x: -9.89346123, y: -3.53883028, z: -2.19677734}
+  m_LocalPosition: {x: 9.30653954, y: -3.53883028, z: -2.19677734}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 964481001}
+  m_Father: {fileID: 1810538282}
 --- !u!114 &425768952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -534,9 +534,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 3
-  RoomToDisable: {fileID: 0}
+  RoomToDisable: {fileID: 1810538281}
   DoorOpen: {fileID: 709310829}
-  RoomToEnable: {fileID: 0}
+  RoomToEnable: {fileID: 964481000}
   isLocked: 0
   keyNumber: 0
 --- !u!61 &425768953
@@ -687,6 +687,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upSprite: {fileID: 21300000, guid: b1a0599bd5eabcf44aa254e52ca25f6a, type: 3}
   downSprite: {fileID: 21300000, guid: c778a88db92e4934ba66cab6f8e9002c, type: 3}
+  Trigger: {fileID: 0}
 --- !u!61 &606112146
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1449,11 +1450,11 @@ Prefab:
     - target: {fileID: 11400000, guid: 23896cb7d5c72824da3a2d8204c6a016, type: 2}
       propertyPath: RoomToDisable
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1810538281}
     - target: {fileID: 11400000, guid: 23896cb7d5c72824da3a2d8204c6a016, type: 2}
       propertyPath: RoomToEnable
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 836135284}
     - target: {fileID: 11400000, guid: 23896cb7d5c72824da3a2d8204c6a016, type: 2}
       propertyPath: direction
       value: 1
@@ -1491,7 +1492,6 @@ Transform:
   - {fileID: 1183001110}
   - {fileID: 606112148}
   - {fileID: 1071902316}
-  - {fileID: 425768951}
   - {fileID: 318762519}
   - {fileID: 1192660697}
   - {fileID: 1587526053}
@@ -1898,7 +1898,7 @@ Prefab:
     - target: {fileID: 11400000, guid: 23896cb7d5c72824da3a2d8204c6a016, type: 2}
       propertyPath: RoomToDisable
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 836135284}
     - target: {fileID: 11400000, guid: 23896cb7d5c72824da3a2d8204c6a016, type: 2}
       propertyPath: DoorOpen
       value: 
@@ -1906,7 +1906,7 @@ Prefab:
     - target: {fileID: 11400000, guid: 23896cb7d5c72824da3a2d8204c6a016, type: 2}
       propertyPath: RoomToEnable
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1810538281}
     - target: {fileID: 11400000, guid: 23896cb7d5c72824da3a2d8204c6a016, type: 2}
       propertyPath: direction
       value: 0
@@ -2036,9 +2036,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 1
-  RoomToDisable: {fileID: 0}
+  RoomToDisable: {fileID: 1810538281}
   DoorOpen: {fileID: 709310829}
-  RoomToEnable: {fileID: 0}
+  RoomToEnable: {fileID: 836135284}
   isLocked: 0
   keyNumber: 0
 --- !u!61 &1185594729
@@ -2215,7 +2215,7 @@ Prefab:
     - target: {fileID: 11400000, guid: 23896cb7d5c72824da3a2d8204c6a016, type: 2}
       propertyPath: RoomToDisable
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 964481000}
     - target: {fileID: 11400000, guid: 23896cb7d5c72824da3a2d8204c6a016, type: 2}
       propertyPath: DoorOpen
       value: 
@@ -2223,7 +2223,7 @@ Prefab:
     - target: {fileID: 11400000, guid: 23896cb7d5c72824da3a2d8204c6a016, type: 2}
       propertyPath: RoomToEnable
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1810538281}
     - target: {fileID: 11400000, guid: 23896cb7d5c72824da3a2d8204c6a016, type: 2}
       propertyPath: direction
       value: 2
@@ -2553,6 +2553,7 @@ Transform:
   - {fileID: 1422791499}
   - {fileID: 606586197}
   - {fileID: 1185594727}
+  - {fileID: 425768951}
   - {fileID: 1983108825}
   - {fileID: 2075768936}
   m_Father: {fileID: 0}
