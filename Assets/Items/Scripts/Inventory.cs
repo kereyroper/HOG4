@@ -22,6 +22,9 @@ public class Inventory : MonoBehaviour
 			otherItems.Add(item);
 		}
 
+		if (otherItems.Exists(x => x.itemType == ItemType.RobotParts1) && otherItems.Exists(x => x.itemType == ItemType.RobotParts2))
+			Application.LoadLevel("win");
+
 	}
 
 	public Item RemoveItem()

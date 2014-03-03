@@ -34,7 +34,6 @@ public class Button : MonoBehaviour
 			isDown = true;
 			GetComponent<SpriteRenderer>().sprite = downSprite;
 			Trigger.GetComponent<Vault>().SignalUnlock();
-			Debug.Log(colliders.ToString());
 		}
 	}
 
@@ -45,8 +44,6 @@ public class Button : MonoBehaviour
 			//HACK
 			if (col.gameObject.tag == "Turtle")
 				colliders--;
-
-			Debug.Log(colliders.ToString());
 
 			if (colliders == 0)
 			{

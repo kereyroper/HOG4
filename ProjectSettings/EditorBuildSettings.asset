@@ -17,3 +17,5 @@ EditorBuildSettings:
     path: Assets/Credits.unity
   - enabled: 1
     path: Assets/toaster game.unity
+  - enabled: 1
+    path: Assets/win.unity
